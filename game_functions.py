@@ -153,9 +153,9 @@ def ship_hit(ai_settings, stats, screen, ship, aliens, bullets):
 
 def check_aliens_bottom(ai_settings, stats, screen, ship, aliens, bullets):
     """ Check if any aliens hit the bottom of the screen """
-    screen.rect = screen.get_rect()
-    for alien in aliens.sprites:
-        if alien.rect.bottom >= screen.rect.bottom:
+    screen_rect = screen.get_rect()
+    for alien in aliens.sprites():
+        if alien.rect.bottom >= screen_rect.bottom:
             # treat this the same as a ship and alien collision
             ship_hit(ai_settings, stats, screen, ship, aliens, bullets)
             break
