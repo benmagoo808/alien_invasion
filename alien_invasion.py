@@ -1,6 +1,6 @@
 import pygame
-from pygame.sprite import Group
 
+from pygame.sprite import Group
 from settings import Settings
 from ship import Ship
 from game_stats import GameStats

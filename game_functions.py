@@ -1,6 +1,6 @@
 import sys
-
 import pygame
+import json
 
 from bullet import Bullet
 from alien import Alien
@@ -232,4 +232,9 @@ def check_high_score(stats, sb):
     """ Check to see if there is a new high score """
     if stats.score > stats.high_score:
         stats.high_score = stats.score
+
+        # Write new high score to saved file
+        filename = "high_score.json"
+        with open(filename, 'w') as f_obj:
+            json.dump(stats.high_score, f_obj)
         sb.prep_high_score()
